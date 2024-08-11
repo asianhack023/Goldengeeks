@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buttons Example</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: black;
+        }
+        .button-container {
+            text-align: center;
+        }
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background-color: rgb(91, 125, 125);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+        }
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color:rgb(91, 125, 125);
+            transition: left 0.3s;
+        }
+        .btn:hover::before {
+            left: 0;
+            background-color: rgba(23, 7, 37, 0.644);
+            color: aliceblue;
+        }
+        .btn:hover {
+            animation: shake 0.5s;
+            animation-iteration-count: infinite;
+        }
+        .btn span {
+            position: relative;
+            z-index: 1;
+        }
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+        a{
+            text-decoration: none;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <a href="./ss.html"><button class="btn"><span>I am Student</span></button></a>
+        <a href="./register.html"><button class="btn"><span>I am Owner</span></button></a>
+    </div>
+</body>
+</html>
